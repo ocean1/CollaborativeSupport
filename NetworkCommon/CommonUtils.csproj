@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0C87566E-0C0F-4FEA-81DF-88B9E4A725BE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CommonUtils</RootNamespace>
+    <AssemblyName>CommonUtils</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcceleratorKey.cs" />
+    <Compile Include="ClipboardMonitor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ClipboardMonitor.Designer.cs">
+      <DependentUpon>ClipboardMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClipChooseFormat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClipChooseFormat.Designer.cs">
+      <DependentUpon>ClipChooseFormat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Network\CommunicationState.cs" />
+    <Compile Include="Network\ConnectionManager.cs" />
+    <Compile Include="Network\AuthenticationMgr.cs" />
+    <Compile Include="Network\Packets\MousePosPacket.cs" />
+    <Compile Include="Network\PeerStatus.cs" />
+    <Compile Include="Network\Packets\AuthenticationResponse.cs" />
+    <Compile Include="Network\Packets\AuthenticationRequest.cs" />
+    <Compile Include="Network\Packets\BigPacket.cs" />
+    <Compile Include="Network\Packets\ClipboardPacket.cs" />
+    <Compile Include="Network\Packets\DataPacket.cs" />
+    <Compile Include="Network\Packets\ErrorPacket.cs" />
+    <Compile Include="Network\Packets\InvalidPacketException.cs" />
+    <Compile Include="Network\Packets\Packet.cs" />
+    <Compile Include="Network\PacketComposer.cs" />
+    <Compile Include="Network\NetworkUtils.cs" />
+    <Compile Include="Network\Packets\UserList.cs" />
+    <Compile Include="Network\Packets\VideoPacket.cs" />
+    <Compile Include="ObjectExtensions.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="PCQueue.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Video\BitmapExtension.cs" />
+    <Compile Include="Video\VideoFragment.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\ClipChooseFormat.resx">
+      <DependentUpon>ClipChooseFormat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logger\Logger.csproj">
+      <Project>{D32AE7BD-33FF-4CA6-81AF-146371050033}</Project>
+      <Name>Logger</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
